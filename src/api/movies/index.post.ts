@@ -1,9 +1,9 @@
-import { z, useValidatedBody } from "h3-zod"
+import { useValidatedBody } from 'h3-zod'
 
 export default defineEventHandler(async (event) => {
   const { title, description } = await useValidatedBody(event, z.object({
     title: z.string(),
-    description: z.string().optional()
+    description: z.string().optional(),
   }))
 
   try {
@@ -12,10 +12,8 @@ export default defineEventHandler(async (event) => {
     return {
       id: newMovie._id,
       title: newMovie.title,
-      description: newMovie.description
+      description: newMovie.description,
     }
-
-  } catch {
-    return createError({ statusCode: 500, statusMessage: "SOMETHING WENT WRONG" })
   }
+  catch { throw InternalError('Something went wrong') }
 })

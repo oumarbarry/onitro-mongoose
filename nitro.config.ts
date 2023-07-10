@@ -1,15 +1,26 @@
-import { defineNitroConfig } from 'nitropack'
+import { defineNitroConfig } from 'nitropack/config'
 
 export default defineNitroConfig({
   srcDir: 'src',
   noPublicDir: true,
-  plugins: ['~/plugins/mongoose.ts'],
+  errorHandler: '~/errorHandler',
+
+  routeRules: {
+    '/api/**': { cors: true },
+  },
+
   imports: {
-    dts: './.nitro/types/nitro.d.ts',
     dirs: [
+      './src/composables/**',
       './src/models/**',
     ],
+    presets: [
+      { from: 'zod', imports: ['z'] },
+    ],
   },
+
+  plugins: ['~/plugins/mongoose.ts'],
+
   runtimeConfig: {
     MONGODB_URI: process.env.MONGODB_URI,
   },

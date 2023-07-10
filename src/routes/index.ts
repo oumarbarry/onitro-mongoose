@@ -1,3 +1,3 @@
 export default defineEventHandler(() => {
-  return "<h1>Nitro is Awesome!</h1>"
+  return '<h1>Nitro is Awesome!</h1>'
 })

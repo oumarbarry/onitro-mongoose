@@ -1,10 +1,9 @@
-import { connect, set } from 'mongoose'
-
-const config = useRuntimeConfig()
+import { connect } from 'mongoose'
 
 export default defineNitroPlugin(async () => {
+  const config = useRuntimeConfig()
+
   try {
-    set('strictQuery', false)
     await connect(config.MONGODB_URI)
     console.log('DB connection established.')
   }

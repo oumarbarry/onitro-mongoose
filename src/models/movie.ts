@@ -7,7 +7,7 @@ interface IMovie {
 
 const movieSchema = new Schema<IMovie>({
   title: { type: String, required: true },
-  description: String
+  description: String,
 })
 
 export const Movie = model<IMovie>('Movie', movieSchema)
