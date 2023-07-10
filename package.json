@@ -4,7 +4,7 @@
     "dev": "nitropack dev",
     "build": "nitropack build",
     "preview": "node .output/server/index.mjs",
-    "postinstall": "npx nitropack prepare",
+    "postinstall": "nitropack prepare",
     "lint": "eslint . --fix"
   },
   "dependencies": {
