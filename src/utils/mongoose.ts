@@ -1,4 +1,3 @@
-import type { Model } from 'mongoose'
 import { Schema, type SchemaDefinition, type SchemaOptions, model } from 'mongoose'
 
 export function defineModel<T>(name: string, schema: SchemaDefinition, options?: SchemaOptions) {

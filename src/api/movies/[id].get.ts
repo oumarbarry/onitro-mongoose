@@ -5,7 +5,8 @@ export default defineEventHandler(async (event) => {
 
   const movie = await Movie.findById(id)
 
-  if (!movie) throw NotFound('Movie not found')
+  if (!movie)
+    throw NotFound('Movie not found')
 
   return {
     id: movie._id,
