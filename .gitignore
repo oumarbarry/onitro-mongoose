@@ -1,6 +1,7 @@
 # Nitro dev/build outputs
 .output
 .nitro
+.data
 .cache
 
 # Node dependencies

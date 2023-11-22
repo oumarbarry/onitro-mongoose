@@ -1,23 +1,23 @@
 {
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "nitropack dev",
     "build": "nitropack build",
     "preview": "node .output/server/index.mjs",
     "postinstall": "nitropack prepare",
-    "lint": "eslint . --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "h3": "^1.7.1",
-    "h3-zod": "^0.5.1",
-    "mongoose": "^7.3.2",
-    "zod": "^3.21.4"
+    "mongoose": "^8.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-ts": "^0.39.7",
-    "@types/node": "^18",
-    "eslint": "^8.44.0",
-    "nitropack": "^2.5.2",
-    "typescript": "^5.1.6"
+    "@antfu/eslint-config": "^2.0.0",
+    "@types/node": "^18.18.12",
+    "eslint": "^8.54.0",
+    "nitropack": "^2.8.0",
+    "typescript": "^5.3.2"
   }
 }

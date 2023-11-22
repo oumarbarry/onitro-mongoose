@@ -5,8 +5,8 @@ export default defineEventHandler(async () => {
     return movies.map(movie => ({
       id: movie._id,
       title: movie.title,
-      description: movie.description,
+      description: movie?.description,
     }))
   }
-  catch { throw InternalError('Something went wrong') }
+  catch { throw createError({ statusCode: 500, statusMessage: "Something went wrong." }) }
 })
