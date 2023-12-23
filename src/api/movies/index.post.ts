@@ -1,6 +1,6 @@
 const insertMovieSchema = z.object({
-  title: z.string(),
-  description: z.string().optional(),
+  title: z.string().max(50),
+  description: z.string().max(500).optional(),
 })
 
 export default defineEventHandler(async (event) => {

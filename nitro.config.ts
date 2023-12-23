@@ -7,8 +7,8 @@ export default defineNitroConfig({
 
   imports: {
     dirs: ["./src/models/**"],
-    presets: [
-      { from: "zod", imports: ["z"] },
+    imports: [
+      { from: "zod", name: "z" },
     ],
   },
 
